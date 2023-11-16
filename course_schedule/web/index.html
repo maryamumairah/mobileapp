@@ -12,8 +12,56 @@
 </head>
 
 <body>
+  <h1>Course Scheduling System</h1>
 
-  <div id="output"></div>
+  <div class="container"></div>
+      <label for="courseCode">Course Code:</label>
+      <input type="text" id="courseCode" placeholder="Insert course code">
+
+      <div class="section">
+          <h2>1st Session</h2>
+
+          <!--choose day for session 1-->
+          <label for="day1">Day 1:</label>
+          <select id="day1">
+              <option value="" disabled selected hidden>Choose a day</option>
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+          </select>
+
+          <!--choose time for session 1-->
+
+      </div>
+
+      <div class="section">
+          <h2>2nd Session</h2>
+
+          <!--choose day for session 2-->
+          <label for="day2">Day 2:</label>
+          <select id="day2">
+              <option value="" disabled selected hidden>Choose a day</option>
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+          </select>
+
+          <!--choose time for session 2-->
+
+      </div>
+
+      <button id="addCourse">Add Course</button>
+      <button id="viewSchedule">View Schedule</button>
+      <button id="removeCourse">Remove Course</button>
+      <button id="editCourse">Edit Course</button>
+
+  </div>
+
+<script defer src="main.dart.js"></script> 
 
 </body>
 </html>

@@ -35,7 +35,6 @@ class _DateTimePickerDropdownState extends State<DateTimePickerDropdown> {
     DateTime(2023, 11, 17, 15, 30),
   ];
   String selectedStartTime = '';
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -68,15 +67,12 @@ class _DateTimePickerDropdownState extends State<DateTimePickerDropdown> {
     return selectedStartTime;
   }
 }
-
  /*
         String getSelectedTime(){
           return selectedStartTime; 
         }
         //kat mana nak letak getter ni
-
         DateTime startTime = DateTime.parse(getSelectedTime()),
         DateTime endTime = startTime.add(const Duration(hours: 1, minutes: 20));
-
         print('Course Start Time: ${DateFormat('h:mm a').format(startTime)}');
         print('Course End Time: ${DateFormat('h:mm a').format(endTime)}');*/

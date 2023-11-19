@@ -25,7 +25,7 @@ void main(){
     String day2 = day2Input.selectedOptions[0].value;
     String time2 = time2Input.selectedOptions[0].value;
 
-    addCourse(courseCode, day1, time1, day2, time2);
+    courseList = addCourse(courseCode, day1, time1, day2, time2);
   });
 
   

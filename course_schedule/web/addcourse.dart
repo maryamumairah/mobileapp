@@ -3,7 +3,7 @@ import 'dart:html';
 // create a list to store the courseCode, day1, time1, day2, time2
 List<Map<String, String>> courseList = [];
 
-void addCourse(String courseCode, String day1, String time1, String day2, String time2) {
+List<Map<String, String>> addCourse(String courseCode, String day1, String time1, String day2, String time2) {
   Map<String, String> newCourse = {
     'courseCode': courseCode,
     'day1': day1,
@@ -26,5 +26,5 @@ void addCourse(String courseCode, String day1, String time1, String day2, String
     }
   } else {
     errorDiv.text = 'Error: Course $courseCode already exists in the schedule.';  }
-
+  return courseList;
 }

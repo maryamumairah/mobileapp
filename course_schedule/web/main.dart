@@ -4,8 +4,8 @@ import 'addcourse.dart';
 // create list to store the courseCode, day1, time1, day2, time2
 List<Map<String, String>> courseList = [];
 
-void main(){
-  // connect to the HTML elements using querySelector method 
+void main() {
+  // connect to the HTML elements using querySelector method
   InputElement courseCodeInput = querySelector('#courseCode') as InputElement;
   SelectElement day1Input = querySelector('#day1') as SelectElement;
   SelectElement time1Input = querySelector('#time1') as SelectElement;
@@ -13,9 +13,7 @@ void main(){
   SelectElement time2Input = querySelector('#time2') as SelectElement;
   ButtonElement addButton = querySelector('#addCourse') as ButtonElement;
 
-  
-
- // Event listeners for buttons in the HTML file
+  // Event listeners for buttons in the HTML file
   addButton.onClick.listen((event) {
     print('Button clicked');
 
@@ -27,8 +25,4 @@ void main(){
 
     courseList = addCourse(courseCode, day1, time1, day2, time2);
   });
-
-  
-
-
 }

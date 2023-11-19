@@ -23,7 +23,8 @@ void main() {
     String time2 = time2Input.selectedOptions[0].value;
 
     courseList = editCourse(courseList, courseCode, day1, time1, day2, time2); 
-    
+  });
+  
   // Event listeners for buttons in the HTML file
   addButton.onClick.listen((event) {
     print('Button clicked');

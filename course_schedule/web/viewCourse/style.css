@@ -1,0 +1,53 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: auto;
+    
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background-color: #eee;
+}
+
+.time-display {
+    font-size: 14px;
+    width: 100px;
+    background-color: #eee;
+}
+
+.time-display:hover {
+    background-color: #eee;
+    cursor: default;
+}
+
+/* Add some hover effect for better user interaction */
+td:hover {
+    background-color: #e6f7ff; /* Light blue */
+    cursor: pointer;
+}

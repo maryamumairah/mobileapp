@@ -1,5 +1,6 @@
 import 'dart:html';
 import 'addcourse.dart';
+import 'course.dart';
 
 // create list to store the courseCode, day1, time1, day2, time2
 List<Map<String, String>> courseList = [];
@@ -25,4 +26,5 @@ void main() {
 
     courseList = addCourse(courseCode, day1, time1, day2, time2);
   });
+
 }

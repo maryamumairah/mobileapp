@@ -1,9 +1,9 @@
 import 'dart:html';
-import 'course.dart';
+import 'addCourse.dart';
 import 'editCourse.dart';
 
 // create list to store the courseCode, day1, time1, day2, time2
-List<Course> courseList = [];
+List<Map<String, String>> courseList = [];
 
 void main(){
   // connect to the HTML elements using querySelector method 
@@ -15,10 +15,15 @@ void main(){
   ButtonElement addButton = querySelector('#addCourse') as ButtonElement;
   ButtonElement editButton = querySelector('#editCourse') as ButtonElement;
 
-  editButton.onClick.listen((event){
-    //call editCourse function from editCourse.dart by passing courseCode
-    String courseCode = courseCodeInput.value!; //get the value of courseCode input 
-    editCourse(courseCode); //call editCourse function from editCourse.dart by passing courseCode
+  editButton.onClick.listen((event){    
+    String courseCode = courseCodeInput.value!;
+    String day1 = day1Input.selectedOptions[0].value;
+    String time1 = time1Input.selectedOptions[0].value;
+    String day2 = day2Input.selectedOptions[0].value;
+    String time2 = time2Input.selectedOptions[0].value;
+
+    courseList = editCourse(courseList, courseCode, day1, time1, day2, time2); 
+    
   });
 
 }

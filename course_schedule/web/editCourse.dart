@@ -1,31 +1,38 @@
 import 'dart:html';
-import 'course.dart';
 import 'overlap.dart';
-import 'addCourse.dart';
 
-void editCourse(String courseCode, String newDay1, String newTime1, String newDay2, String newTime2) {
 
-  Course newCourseList = Course(courseCode, newDay1, newTime1, newDay2, newTime2); //newCourseList is a new object of Course class with the updated values
+List<Map<String, String>> editCourse(List<Map<String, String>> courseList, String courseCode, String day1, String time1, String day2, String time2) {
 
-  // Check if the course already exists in the list
-  Course? courseExist;
-  for (Course courseMapNew in newCourseMap) {
-    if (courseMapNew.courseCode == courseCode) {
-      courseExist = courseMapNew;
-      break;
-    }
-  }
+  Map<String, String> newCourse = { //this creates a new map called newCourse with the following keys and values but it is not needed because we already have newCourse in the function parameters
+    'courseCode': courseCode, //this line is not needed because we already have courseCode in the function parameters
+    'day1': day1, //this line is to add the day1 to the newCourse map but it is not needed because we already have day1 in the function parameters
+    'time1': time1,
+    'day2': day2,
+    'time2': time2,
+  };
+
+  //Check if the course already exists in the list and store it in courseExists
+  bool courseExists = courseList.any((course) => course['courseCode'] == courseCode);
 
   DivElement messageDiv = querySelector('#message') as DivElement;
-
-  if (courseExist != null) {
+  if (courseExists) {
       // Check if the updated course has an overlap with any existing course
-      if (!hasOverlap(newCourseList)) { //pass the new inputs to hasOverlap function which is newDay1, newTime1, newDay2, newTime2
+      if (!hasOverlap(courseList, newCourse, courseCode, day1, time1, day2, time2)) { 
         // If there's no overlap, update the course
-        courseExist.day1 = newDay1;
-        courseExist.time1 = newTime1;
-        courseExist.day2 = newDay2;
-        courseExist.time2 = newTime2;
+        
+        for(Map<String, String> courseListTemp in courseList) {
+          if(courseListTemp['courseCode'] == courseCode) { 
+            courseListTemp['day1'] = day1; 
+            courseListTemp['time1'] = time1;
+            courseListTemp['day2'] = day2;
+            courseListTemp['time2'] = time2;
+
+            courseListTemp = newCourse;
+
+            break;
+          }
+        }
 
         messageDiv.text = 'Course updated successfully.';
       } else {
@@ -35,4 +42,7 @@ void editCourse(String courseCode, String newDay1, String newTime1, String newDa
   } else {
     messageDiv.text = 'Error: Course $courseCode does not exist in the schedule. Please check the course code again.';
   }
+
+  return courseList;
+
 }

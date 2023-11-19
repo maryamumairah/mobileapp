@@ -1,67 +1,112 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="scaffolded-by" content="https://github.com/dart-lang/sdk">
-    <title>course_schedule</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="main.dart.js"></script>
-</head>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="scaffolded-by" content="https://github.com/dart-lang/sdk">
+        <title>course_schedule</title>
+        <link rel="stylesheet" href="styles.css">
+        <script defer src="main.dart.js"></script>
+    </head>
 
-<body>
-  <h1>Course Scheduling System</h1>
+    <body>
+        <h1>Course Scheduling System</h1>
+        
+        <div class="container"></div>
+        
+        <label for="courseCode">Course Code:</label>
+        <input type="text" id="courseCode" placeholder="Insert course code">
 
-  <div class="container"></div>
-      <label for="courseCode">Course Code:</label>
-      <input type="text" id="courseCode" placeholder="Insert course code">
+        <div class="section">
+            <h2>1st Session</h2>
 
-      <div class="section">
-          <h2>1st Session</h2>
+            <!--choose day for session 1-->
+            <label for="day1">Day 1:</label>
+            <select id="day1">
+                <option value="" disabled selected hidden>Choose a day</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+            </select>
 
-          <!--choose day for session 1-->
-          <label for="day1">Day 1:</label>
-          <select id="day1">
-              <option value="" disabled selected hidden>Choose a day</option>
-              <option value="Monday">Monday</option>
-              <option value="Tuesday">Tuesday</option>
-              <option value="Wednesday">Wednesday</option>
-              <option value="Thursday">Thursday</option>
-              <option value="Friday">Friday</option>
-          </select>
+            <!--choose time for session 1-->
+            <label for="time1">Select a time:</label>
+            <input type="time" id="time1" onchange=preferedTime1() name="time1">
 
-          <!--choose time for session 1-->
+            <p id="noteSession1"></p>
+        </div>
 
-      </div>
 
-      <div class="section">
-          <h2>2nd Session</h2>
+        <div class="section">
+            <h2>2nd Session</h2>
 
-          <!--choose day for session 2-->
-          <label for="day2">Day 2:</label>
-          <select id="day2">
-              <option value="" disabled selected hidden>Choose a day</option>
-              <option value="Monday">Monday</option>
-              <option value="Tuesday">Tuesday</option>
-              <option value="Wednesday">Wednesday</option>
-              <option value="Thursday">Thursday</option>
-              <option value="Friday">Friday</option>
-          </select>
+            <!--choose day for session 2-->
+            <label for="day2">Day 2:</label>
+            <select id="day2">
+                <option value="" disabled selected hidden>Choose a day</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+            </select>
 
-          <!--choose time for session 2-->
+            <!--choose time for session 2-->
+            <label for="time2">Select a time:</label>
+            <input type="time" id="time2" onchange=preferedTime2() name="time2">
 
-      </div>
+            <p id="noteSession2"></p>
 
-      <button id="addCourse">Add Course</button>
-      <button id="viewSchedule">View Schedule</button>
-      <button id="removeCourse">Remove Course</button>
-      <button id="editCourse">Edit Course</button>
+        </div>
 
-  </div>
+        <button id="addCourse">Add Course</button>
+        <button id="viewSchedule">View Schedule</button>
+        <button id="removeCourse">Remove Course</button>
+        <button id="editCourse">Edit Course</button>
 
-<script defer src="main.dart.js"></script> 
+        <script defer src="main.dart.js"></script>     
+    </body>
 
-</body>
+    <script>
+
+        let startTime1 = document.getElementById("time1").value;
+
+        function preferedTime1() {
+            if (
+                startTime1 != '08:30' &&
+                startTime1 != '10:00' &&
+                startTime1 != '12:50' &&
+                startTime1 != '02:00' &&
+                startTime1 != '03:30'
+            ) {
+                document.getElementById("noteSession1").innerHTML = 
+                "Error: Session time is only allowable for 08:30am, 10:00am, 12:50pm, 02:00pm, and 03:30pm" + startTime2;
+            } else {
+                document.getElementById("noteSession1").innerHTML = 
+                "Session time is allowable";
+            }
+        }
+
+        let startTime2 = document.getElementById("time2").value;
+
+        function preferedTime2() {
+            if (
+                startTime2 != '08:30' &&
+                startTime2 != '10:00' &&
+                startTime2 != '12:50' &&
+                startTime2 != '02:00' &&
+                startTime2 != '03:30'
+            ) {
+                document.getElementById("noteSession2").innerHTML = 
+                "Error: Session time is only allowable for 08:30am, 10:00am, 12:50pm, 02:00pm, and 03:30pm";
+            } else {
+                document.getElementById("noteSession2").innerHTML = 
+                "Session time is allowable";
+            }
+        }
+</script>
+
 </html>

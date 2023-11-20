@@ -56,6 +56,9 @@ input, select {
 
 .button-container {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
@@ -71,3 +74,9 @@ button {
 button:hover {
   background-color: #ff7f7f;
 }
+
+/* button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */

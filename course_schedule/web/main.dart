@@ -1,6 +1,7 @@
 import 'dart:html';
-import 'addCourse.dart';
-import 'editCourse.dart';
+import 'addcourse.dart';
+import 'editcourse.dart';
+import 'removecourse.dart';
 
 // create list to store the courseCode, day1, time1, day2, time2
 List<Map<String, String>> courseList = [];
@@ -14,21 +15,22 @@ void main() {
   SelectElement time2Input = querySelector('#time2') as SelectElement;
   ButtonElement addButton = querySelector('#addCourse') as ButtonElement;
   ButtonElement editButton = querySelector('#editCourse') as ButtonElement;
+  ButtonElement remove = querySelector('#remove') as ButtonElement;
+  InputElement course2Remove = querySelector('#course2Remove') as InputElement;
 
-  editButton.onClick.listen((event){    
+  editButton.onClick.listen((event) {
     String courseCode = courseCodeInput.value!;
     String day1 = day1Input.selectedOptions[0].value;
     String time1 = time1Input.selectedOptions[0].value;
     String day2 = day2Input.selectedOptions[0].value;
     String time2 = time2Input.selectedOptions[0].value;
 
-    courseList = editCourse(courseList, courseCode, day1, time1, day2, time2); 
+    courseList = editCourse(courseList, courseCode, day1, time1, day2, time2);
   });
-  
+
   // Event listeners for buttons in the HTML file
   addButton.onClick.listen((event) {
     print('Button clicked');
-
     String courseCode = courseCodeInput.value!;
     String day1 = day1Input.selectedOptions[0].value;
     String time1 = time1Input.selectedOptions[0].value;
@@ -38,4 +40,10 @@ void main() {
     courseList = addCourse(courseCode, day1, time1, day2, time2);
   });
 
+  remove.onClick.listen((event) {
+    // connect to the HTML elements using querySelector method
+    if (course2Remove.value != null) {
+      removeCourse(courseList, course2Remove);
+    }
+  });
 }

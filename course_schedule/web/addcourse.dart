@@ -1,9 +1,10 @@
-import 'dart:html'; 
+import 'dart:html';
 
 // create a list to store the courseCode, day1, time1, day2, time2
 List<Map<String, String>> courseList = [];
 
-List<Map<String, String>> addCourse(String courseCode, String day1, String time1, String day2, String time2) {
+List<Map<String, String>> addCourse(
+    String courseCode, String day1, String time1, String day2, String time2) {
   Map<String, String> newCourse = {
     'courseCode': courseCode,
     'day1': day1,
@@ -13,18 +14,24 @@ List<Map<String, String>> addCourse(String courseCode, String day1, String time1
   };
 
   // Check if the course already exists in the list
-  bool courseExists = courseList.any((course) => course['courseCode'] == courseCode);
+  bool courseExists =
+      courseList.any((course) => course['courseCode'] == courseCode);
   DivElement errorDiv = querySelector('#error') as DivElement;
   if (!courseExists) {
     // Check if the course has less than two time slots
-    if (courseList.where((course) => course['courseCode'] == courseCode).length < 2) {
+    if (courseList
+            .where((course) => course['courseCode'] == courseCode)
+            .length <
+        2) {
       // Add the new course to the list
       courseList.add(newCourse);
-      print('Course $courseCode added to the schedule on $day1 at $time1 and $day2 at $time2.');
+      print(
+          'Course $courseCode added to the schedule on $day1 at $time1 and $day2 at $time2.');
     } else {
       print('Error: Course $courseCode already scheduled for two days.');
     }
   } else {
-    errorDiv.text = 'Error: Course $courseCode already exists in the schedule.';  }
+    errorDiv.text = 'Error: Course $courseCode already exists in the schedule.';
+  }
   return courseList;
 }

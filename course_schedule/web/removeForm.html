@@ -6,11 +6,18 @@
 <body>
     <h1>Remove Course</h1>
     <p>Note: Removing a course will delete both sessions of the course from the schedule.</p>
-    <form id="removeForm" action="main.dart" method="post" onsubmit="return validateForm()">
+    <form id="remove-course-form" onsubmit="return validateForm()">
         <label for="course2Remove">Course Code:</label>
         <input type="text" id="course2Remove" name="course2Remove" required>
-        <input type="submit" id="remove" value="Confirm Remove">
+        <input type="submit" value="Confirm Remove">
     </form>
+
+    <br>
+
+    <div id="removeAlert"></div>
+
+    <a href="index.html"><button id="back">Back</button></a>
+
 </body>
 
 <script>
@@ -19,8 +26,12 @@
         if (course2Remove == null || course2Remove.trim() === "") {
             alert("Course Code must be filled out");
             return false;
-        }
+        } 
+        
     }
 </script>
 
 </html>
+
+
+

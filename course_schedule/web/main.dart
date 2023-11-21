@@ -15,10 +15,10 @@ void main() {
   SelectElement time2Input = querySelector('#time2') as SelectElement;
   ButtonElement addButton = querySelector('#addCourse') as ButtonElement;
   ButtonElement editButton = querySelector('#editCourse') as ButtonElement;
-  FormElement removeCourseForm =
-      querySelector('#remove-course-form') as FormElement;
-  InputElement course2RemoveInput =
-      querySelector('#course2Remove') as InputElement;
+  FormElement? removeCourseForm =
+      querySelector('#remove-course-form') as FormElement?;
+  InputElement? course2RemoveInput =
+      querySelector('#course2Remove') as InputElement?;
 
   editButton.onClick.listen((event) {
     String courseCode = courseCodeInput.value!;
@@ -42,10 +42,10 @@ void main() {
     courseList = addCourse(courseCode, day1, time1, day2, time2);
   });
 
-  removeCourseForm.onSubmit.listen((event) {
+  removeCourseForm?.onSubmit.listen((event) {
     event.preventDefault();
 
-    String course2Remove = course2RemoveInput.value!;
-    courseList = removeCourse(courseList, course2Remove);
+    String? course2Remove = course2RemoveInput?.value;
+    courseList = removeCourse(courseList, course2Remove!);
   });
 }

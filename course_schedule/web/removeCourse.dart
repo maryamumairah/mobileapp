@@ -2,18 +2,25 @@ import 'dart:html';
 
 List<Map<String, String>> removeCourse(
     List<Map<String, String>> courseList, String course2Remove) {
-  bool courseExists =
-      courseList.any((course) => course['course2Remove'] == course2Remove);
+  bool courseExist =
+      courseList.any((course) => course['courseCode'] == course2Remove);
 
-  DivElement alertDiv = querySelector('#removeAlert') as DivElement;
+  if (courseExist) {
+    courseList.removeWhere((course) => course['courseCode'] == course2Remove);
+    String keyValuePairs = '';
 
-  if (courseExists) {
-    courseList
-        .removeWhere((course) => course['course2Remove'] == course2Remove);
-    alertDiv.text =
-        'Course $course2Remove removed from the schedule. Update courses: $courseList';
+    courseList.forEach((course) {
+      course.forEach((key, value) {
+        keyValuePairs += '$key: $value\n';
+      });
+    });
+
+    document.getElementById('alertR')!.innerText =
+        // ignore: prefer_interpolation_to_compose_strings
+        'Course $course2Remove removed\n' + keyValuePairs;
   } else {
-    alertDiv.text = 'Error: Course $course2Remove not found in the schedule.';
+    document.getElementById('alertR')!.innerText =
+        'Course $course2Remove not found';
   }
 
   return courseList;

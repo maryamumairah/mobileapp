@@ -1,4 +1,5 @@
 import 'dart:html'; 
+import 'overlap.dart';
 
 // create a list to store the courseCode, day1, time1, day2, time2
 List<Map<String, String>> courseList = [];
@@ -15,16 +16,25 @@ List<Map<String, String>> addCourse(String courseCode, String day1, String time1
   // Check if the course already exists in the list
   bool courseExists = courseList.any((course) => course['courseCode'] == courseCode);
   DivElement messageDiv = querySelector('#message') as DivElement;
+
+  // Check if the course has less than two time slots and doesn't overlap
   if (!courseExists) {
-    // Check if the course has less than two time slots
     if (courseList.where((course) => course['courseCode'] == courseCode).length < 2) {
-      // Add the new course to the list
-      courseList.add(newCourse);
-      messageDiv.text = 'Course $courseCode added to the schedule on $day1 at $time1 and $day2 at $time2.';
+      if (!hasOverlap(courseList, newCourse)) {
+        // Add the new course to the list
+        courseList.add(newCourse);
+        messageDiv.text = 'Course $courseCode added to the schedule on $day1 at $time1 and $day2 at $time2.';
+      } if (hasOverlap(courseList, newCourse)) {
+        messageDiv.text = 'Error: Course $courseCode overlaps with each other. Please check the course times again.';
+      }else {
+        messageDiv.text = 'Error: Course $courseCode overlaps with an existing course. Please check the course times again.';
+      }
     } else {
       messageDiv.text = 'Error: Course $courseCode already scheduled for two days.';
     }
   } else {
-    messageDiv.text = 'Error: Course $courseCode already exists in the schedule.';  }
+    messageDiv.text = 'Error: Course $courseCode already exists in the schedule.';
+  }
+
   return courseList;
 }

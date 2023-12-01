@@ -18,7 +18,7 @@ List<Map<String, String>> editCourse(List<Map<String, String>> courseList, Strin
   DivElement messageDiv = querySelector('#message') as DivElement;
   if (courseExists) {
       // Check if the updated course has an overlap with any existing course
-      if (!hasOverlap(courseList, newCourse)) { 
+      if (!hasOverlap(courseList, newCourse, courseCode, day1, time1, day2, time2)) { 
         // If there's no overlap, update the course
         
         for(Map<String, String> courseListTemp in courseList) {

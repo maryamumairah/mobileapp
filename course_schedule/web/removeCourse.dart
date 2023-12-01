@@ -22,6 +22,5 @@ List<Map<String, String>> removeCourse(
     document.getElementById('alertR')!.innerText =
         'Course $course2Remove not found';
   }
-
   return courseList;
 }

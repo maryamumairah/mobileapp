@@ -6,14 +6,6 @@ import 'removecourse.dart';
 // create list to store the courseCode, day1, time1, day2, time2
 List<Map<String, String>> courseList = [];
 
-/*to test functions, open this message and change any 'courseList' to 'courseArray'
-List<Map<String, String>> courseArray = [
-  {'courseCode': 'CS101', 'courseName': 'Computer Science 101'},
-  {'courseCode': 'MATH101', 'courseName': 'Mathematics 101'},
-  {'courseCode': 'PHY101', 'courseName': 'Physics 101'},
-  {'courseCode': 'CS201', 'courseName': 'Computer Science 201'},
-];*/
-
 void main() {
   // connect to the HTML elements using querySelector method
   InputElement courseCodeInput = querySelector('#courseCode') as InputElement;

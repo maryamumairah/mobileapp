@@ -1,6 +1,6 @@
 import 'dart:html';
 import 'addcourse.dart';
-import 'editcourse.dart';
+import 'editCourse.dart';
 import 'removecourse.dart';
 
 // create list to store the courseCode, day1, time1, day2, time2

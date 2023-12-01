@@ -25,7 +25,7 @@ void main() {
   Map<String, String> queryParams = Uri.splitQueryString(window.location.href);
  
   // Retrieve the encoded list from the query parameters
-  String? encodedSchedule = queryParams['http://127.0.0.1:8080/viewCourse/viewCourse.html?schedule'];
+  String? encodedSchedule = queryParams['http://127.0.0.1:8080/viewSchedule/viewSchedule.html?schedule'];
 
   // Decode the list
   List<dynamic> scheduleAsMaps = jsonDecode(encodedSchedule!);

@@ -51,7 +51,7 @@ void main() {
     String encodedSchedule = jsonEncode(courseList);
 
     // Construct the URL with the encoded list as a query parameter
-    String url = 'viewCourse/viewCourse.html?schedule=$encodedSchedule';
+    String url = 'viewSchedule/viewSchedule.html?schedule=$encodedSchedule';
 
     // Navigate to the second page
     window.location.href = url;

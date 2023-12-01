@@ -20,7 +20,7 @@ function preferedTime(startTime, messageElement) {
   if (
     startTime !== '08:30' &&
     startTime !== '10:00' &&
-    startTime !== '11.30' &&
+    startTime !== '11:30' &&
     startTime !== '14:00' &&
     startTime !== '15:30'
   ) {

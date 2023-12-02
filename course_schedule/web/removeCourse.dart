@@ -5,15 +5,8 @@ List<Map<String, String>> removeCourse(List<Map<String, String>> courseList, Str
 
   if (courseExist) {
     courseList.removeWhere((course) => course['courseCode'] == course2Remove);
-    String keyValuePairs = '';
 
-    courseList.forEach((course) {
-      course.forEach((key, value) {
-        keyValuePairs += '$key: $value\n';
-      });
-    });
-
-    document.getElementById('alertR')!.innerText = 'Course $course2Remove removed\n $keyValuePairs';
+    document.getElementById('alertR')!.innerText = 'Course $course2Remove removed';
   } else {
     document.getElementById('alertR')!.innerText = 'Course $course2Remove not found';
   }

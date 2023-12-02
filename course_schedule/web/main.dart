@@ -20,16 +20,6 @@ void main() {
   ButtonElement viewScheduleButton = querySelector('#viewSchedule') as ButtonElement;
   InputElement course2RemoveInput = querySelector('#course2Remove') as InputElement;
 
-  editButton.onClick.listen((event) {
-    String courseCode = courseCodeInput.value!;
-    String day1 = day1Input.selectedOptions[0].value;
-    String time1 = time1Input.value!;
-    String day2 = day2Input.selectedOptions[0].value;
-    String time2 = time2Input.value!;
-
-    courseList = editCourse(courseList, courseCode, day1, time1, day2, time2);
-  });
-
   // Event listeners for buttons in the HTML file
   addButton.onClick.listen((event) {
     print('addCourse button clicked');

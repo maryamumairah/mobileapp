@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -57,16 +56,40 @@
             <p id="error-message-two"></p>
         </div>
 
-        <div id="message"></div>
+        <div id="message"></div><br>
+        <div id="alertR"></div><br>
 
-        <div class="button-container">
-            <button id="addCourse">Add Course</button>
-            <button id="viewSchedule">View Schedule</button>
-            <button id="removeCourse">Remove Course</button>
-            <button id="editCourse">Edit Course</button>
-        </div>
 
+        <button id="addCourse">Add Course</button>
+        <button id="viewSchedule">View Schedule</button>
+        <button id="removeCourse" class="open-button" onclick="openForm()">Remove Course</button>
+        <button id="editCourse">Edit Course</button>
     </div>
+
+    <div class= "form-popup" id="myForm">
+        <form class="form-container">
+          <h1>Course to Remove</h1>
+      
+          <label for="course2Remove">Course Code:</label>
+          <input type="text" id="course2Remove" name="course2Remove" required>
+          <p class="notes">Note: Removing a course will delete both sessions of the course from the schedule.</p>
+      
+          <button type="submit" class="btn" id="confirmRemove">Confirm Remove</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+    <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+      
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+    </script>
+    
+  <script defer src="main.dart.js"></script> 
 
 </body>
 

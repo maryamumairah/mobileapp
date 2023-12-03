@@ -1,6 +1,7 @@
 import 'dart:html';
 import 'addcourse.dart';
 import 'editCourse.dart';
+import 'removeCourse.dart';
 import 'dart:convert';
 
 // create list to store the courseCode, day1, time1, day2, time2
@@ -15,8 +16,9 @@ void main() {
   InputElement time2Input = querySelector('#time2') as InputElement;
   ButtonElement addButton = querySelector('#addCourse') as ButtonElement;
   ButtonElement editButton = querySelector('#editCourse') as ButtonElement;
+  ButtonElement removeButton = querySelector('#confirmRemove') as ButtonElement;
   ButtonElement viewScheduleButton = querySelector('#viewSchedule') as ButtonElement;
-
+  InputElement course2RemoveInput = querySelector('#course2Remove') as InputElement;
 
   // Event listeners for buttons in the HTML file
   addButton.onClick.listen((event) {
@@ -29,7 +31,6 @@ void main() {
     String time2 = time2Input.value!;
 
     courseList = addCourse(courseCode, day1, time1, day2, time2);
-
   });
   
   editButton.onClick.listen((event){
@@ -55,5 +56,12 @@ void main() {
 
     // Navigate to the second page
     window.location.href = url;
+  });
+
+  removeButton.onClick.listen((event) {
+    event.preventDefault();
+    String course2Remove = course2RemoveInput.value!;
+
+    courseList = removeCourse(courseList, course2Remove);
   });
 }

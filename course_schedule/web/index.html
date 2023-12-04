@@ -1,67 +1,99 @@
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="scaffolded-by" content="https://github.com/dart-lang/sdk">
-    <title>course_schedule</title>
+    <title>Course Scheduling System</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="main.dart.js"></script>
+    <script defer src="main.dart.js"></script> 
+    <script defer src="preferred_time.js"></script>
 </head>
 
 <body>
-  <h1>Course Scheduling System</h1>
+    <h1>Course Scheduling System</h1>
 
-  <div class="container"></div>
-      <label for="courseCode">Course Code:</label>
-      <input type="text" id="courseCode" placeholder="Insert course code">
-
-      <div class="section">
-          <h2>1st Session</h2>
-
-          <!--choose day for session 1-->
-          <label for="day1">Day 1:</label>
-          <select id="day1">
-              <option value="" disabled selected hidden>Choose a day</option>
-              <option value="Monday">Monday</option>
-              <option value="Tuesday">Tuesday</option>
-              <option value="Wednesday">Wednesday</option>
-              <option value="Thursday">Thursday</option>
-              <option value="Friday">Friday</option>
-          </select>
-
-          <!--choose time for session 1-->
-
+    <div class="container">
+      <div class="course-container">
+        <label for="courseCode">Course Code:</label>
+        <input type="text" id="courseCode" placeholder="Insert course code">
       </div>
 
-      <div class="section">
-          <h2>2nd Session</h2>
+        <div class="section">
+            <h2>1st Session</h2>
+            <label for="day1">Day 1</label>
+            <select id="day1">
+                <option value="" disabled selected hidden>Choose a day</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+            </select>
 
-          <!--choose day for session 2-->
-          <label for="day2">Day 2:</label>
-          <select id="day2">
-              <option value="" disabled selected hidden>Choose a day</option>
-              <option value="Monday">Monday</option>
-              <option value="Tuesday">Tuesday</option>
-              <option value="Wednesday">Wednesday</option>
-              <option value="Thursday">Thursday</option>
-              <option value="Friday">Friday</option>
-          </select>
+            <label for="time1">Time 1</label>
+            <input type="time" id="time1">
+            <p id="noteSession1"></p>
+            <p>Session time is only allowable for 08:30am, 10:00am, 11:30am, 02:00pm, and 03:30pm</p>
+            <p id="error-message-one"></p>
+        </div>
 
-          <!--choose time for session 2-->
+        <div class="section">
+            <h2>2nd Session</h2>
+            <label for="day2">Day 2</label>
+            <select id="day2">
+                <option value="" disabled selected hidden>Choose a day</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+            </select>
 
-      </div>
+            <label for="time2">Time 2</label>
+            <input type="time" id="time2">
+            <p id="noteSession2"></p>
+            <p>Session time is only allowable for 08:30am, 10:00am, 11:30am, 02:00pm, and 03:30pm</p>
+            <p id="error-message-two"></p>
+        </div>
 
-      <button id="addCourse">Add Course</button>
-      <button id="viewSchedule">View Schedule</button>
-      <button id="removeCourse">Remove Course</button>
-      <button id="editCourse">Edit Course</button>
+        <div id="message"></div><br>
+        <div id="alertR"></div><br>
 
-  </div>
+        <div class = button-container>
+          <button id="addCourse">Add Course</button>
+          <button id="viewSchedule">View Schedule</button>
+          <button id="removeCourse" class="open-button" onclick="openForm()">Remove Course</button>
+          <button id="editCourse">Edit Course</button>
+        </div>
+      </div>  
 
-<script defer src="main.dart.js"></script> 
+    <div class= "form-popup" id="myForm">
+        <form class="form-container">
+          <h1>Course to Remove</h1>
+      
+          <label for="course2Remove">Course Code:</label>
+          <input type="text" id="course2Remove" name="course2Remove" required>
+          <p class="notes">Note: Removing a course will delete both sessions of the course from the schedule.</p>
+      
+          <button type="submit" class="btn" id="confirmRemove">Confirm Remove</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+    
+    <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+      
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+    </script>
+    
+  <script defer src="main.dart.js"></script> 
 
 </body>
+
 </html>

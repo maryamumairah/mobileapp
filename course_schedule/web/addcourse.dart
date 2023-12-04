@@ -22,7 +22,7 @@ List<Map<String, String>> addCourse(String courseCode, String day1, String time1
   // Check if the course already exists in the list
    bool courseExists = courseList.any((course) => course['courseCode'] == courseCode);
   DivElement messageDiv = querySelector('#message') as DivElement;
-  
+    
   if (!courseExists) {
     // Check if the course has less than two time slots
    if (day1 == day2 && time1 == time2 || hasOverlapWithExisting(courseList, courseCode, day1, time1, day2, time2)) {
@@ -40,4 +40,3 @@ List<Map<String, String>> addCourse(String courseCode, String day1, String time1
   }
   return courseList;
 }
-

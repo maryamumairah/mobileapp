@@ -20,11 +20,11 @@ function preferedTime(startTime, messageElement) {
   if (
     startTime !== '08:30' &&
     startTime !== '10:00' &&
-    startTime !== '11.30' &&
+    startTime !== '11:30' &&
     startTime !== '14:00' &&
     startTime !== '15:30'
   ) {
-    messageElement.innerHTML = "Error: Session time is only allowable for 08:30am, 10:00am, 12:50pm, 02:00pm, and 03:30pm";
+    messageElement.innerHTML = "Error: Session time is only allowable for 08:30am, 10:00am, 11:30am, 02:00pm, and 03:30pm";
   } else {
     messageElement.innerHTML = "Session time is allowable";
   }

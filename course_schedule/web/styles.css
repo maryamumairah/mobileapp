@@ -12,24 +12,24 @@ body {
   align-items: center;
 }
 
+p {
+  text-align: center;
+}
+
 h1 {
   text-align: center;
   color: #0693e3;
 }
 
 .container {
-  max-width: 600px;
+  max-width:fit-content;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .section {
   background-color: #dff2ff;
   padding: 20px;
   margin-bottom: 20px;
-  width: 100%;
   border-radius: 5px;
 }
 
@@ -73,4 +73,46 @@ button {
 
 button:hover {
   background-color: #ff7f7f;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 30px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+.form-container {
+  max-width: 300px;
+  padding: 30px;
+  background-color: white;
+}
+
+.form-container input[type=text] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 0px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.notes {
+    font-size: 10px;
+    color: rgb(125, 118, 118);
+    margin: 5px 0 20px 0;
+}
+
+.btn {
+  margin: 5px 0 10px 0;
+}
+
+.form-container .cancel {
+  background-color: rgb(171, 156, 156);
 }

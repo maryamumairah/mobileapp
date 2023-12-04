@@ -64,5 +64,8 @@ void updateScheduleTable(List<Course> weeklySchedule) {
 
     dateCell1.innerText = course.courseCode;
     dateCell2.innerText = course.courseCode;
+
+    dateCell1.style.backgroundColor = '#DFF2FF';
+    dateCell2.style.backgroundColor = '#DFF2FF';
   });
 }

@@ -31,7 +31,7 @@ th, td {
 }
 
 th {
-    background-color: #7ba5e8;
+    background-color: #3D68D4;
     color: #fff;
 }
 
@@ -40,12 +40,12 @@ tr {
 }
 
 td:first-child {
-    background-color: #0693e3;
+    background-color: #4D48F7;
     color: white;
 }
 
 td:first-child:hover {
-    background-color: #0693e3;
+    background-color: #4D48F7;
     cursor: default;
 }
 

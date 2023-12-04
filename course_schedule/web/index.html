@@ -14,9 +14,11 @@
 <body>
     <h1>Course Scheduling System</h1>
 
-    <div class="container"></div>
+    <div class="container">
+      <div class="course-container">
         <label for="courseCode">Course Code:</label>
         <input type="text" id="courseCode" placeholder="Insert course code">
+      </div>
 
         <div class="section">
             <h2>1st Session</h2>
@@ -59,12 +61,13 @@
         <div id="message"></div><br>
         <div id="alertR"></div><br>
 
-
-        <button id="addCourse">Add Course</button>
-        <button id="viewSchedule">View Schedule</button>
-        <button id="removeCourse" class="open-button" onclick="openForm()">Remove Course</button>
-        <button id="editCourse">Edit Course</button>
-    </div>
+        <div class = button-container>
+          <button id="addCourse">Add Course</button>
+          <button id="viewSchedule">View Schedule</button>
+          <button id="removeCourse" class="open-button" onclick="openForm()">Remove Course</button>
+          <button id="editCourse">Edit Course</button>
+        </div>
+      </div>  
 
     <div class= "form-popup" id="myForm">
         <form class="form-container">
@@ -78,7 +81,7 @@
           <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
     </div>
-
+    
     <script>
       function openForm() {
         document.getElementById("myForm").style.display = "block";

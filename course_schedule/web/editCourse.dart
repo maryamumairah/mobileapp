@@ -35,6 +35,7 @@ List<Map<String, String>> editCourse(List<Map<String, String>> courseList, Strin
       }
 
       messageDiv.text = 'Course updated successfully.';
+      messageDiv.style.color = 'green';
     } else {
       // If there's an overlap, print an error message
       messageDiv.text = 'Error: The updated course overlaps with an existing course. Please check the course times again.';

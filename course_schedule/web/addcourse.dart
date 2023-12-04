@@ -31,8 +31,10 @@ List<Map<String, String>> addCourse(String courseCode, String day1, String time1
       courseList.add(newCourse);
       if (courseList.length == 1) {
         messageDiv.text = 'Course $courseCode successfully added. You have 1 course in your schedule.';
+        messageDiv.style.color = 'green';
       } else {
         messageDiv.text = 'Course $courseCode successfully added. You have ${courseList.length} courses in your schedule.';
+        messageDiv.style.color = 'green';
       }
     }
   } else {

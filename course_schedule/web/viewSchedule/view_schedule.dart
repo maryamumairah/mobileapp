@@ -54,10 +54,8 @@ void updateScheduleTable(List<Course> weeklySchedule) {
   });
 
   weeklySchedule.forEach((course) {
-    String cellId1 =
-        '${course.day1.toLowerCase()}-${course.time1.replaceAll(':', '-')}';
-    String cellId2 =
-        '${course.day2.toLowerCase()}-${course.time2.replaceAll(':', '-')}';
+    String cellId1 = '${course.day1.toLowerCase()}-${course.time1.replaceAll(':', '-')}';
+    String cellId2 = '${course.day2.toLowerCase()}-${course.time2.replaceAll(':', '-')}';
 
     TableCellElement dateCell1 = querySelector('#$cellId1') as TableCellElement;
     TableCellElement dateCell2 = querySelector('#$cellId2') as TableCellElement;

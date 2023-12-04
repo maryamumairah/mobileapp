@@ -20,7 +20,7 @@ List<Map<String, String>> addCourse(String courseCode, String day1, String time1
   };
 
   // Check if the course already exists in the list
-   bool courseExists = courseList.any((course) => course['courseCode'] == courseCode);
+  bool courseExists = courseList.any((course) => course['courseCode'] == courseCode);
   DivElement messageDiv = querySelector('#message') as DivElement;
     
   if (!courseExists) {
@@ -37,6 +37,7 @@ List<Map<String, String>> addCourse(String courseCode, String day1, String time1
     }
   } else {
     messageDiv.text = 'Error: You have exceeded the maximum number of courses allowed in your schedule.';
+    messageDiv.style.color = 'red';
   }
   return courseList;
 }

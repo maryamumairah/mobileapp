@@ -6,9 +6,11 @@ List<Map<String, String>> removeCourse(List<Map<String, String>> courseList, Str
   if (courseExist) {
     courseList.removeWhere((course) => course['courseCode'] == course2Remove);
 
-    document.getElementById('alertR')!.innerText = 'Course $course2Remove removed';
+    document.getElementById('message')!.innerText = 'Course $course2Remove removed from schedule';
+    document.getElementById('message')!.style.color = 'green';
   } else {
-    document.getElementById('alertR')!.innerText = 'Course $course2Remove not found';
+    document.getElementById('message')!.innerText = 'Error: Course $course2Remove not found in schedule';
+    document.getElementById('message')!.style.color = 'red';
   }
   return courseList;
 }

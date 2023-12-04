@@ -36,7 +36,9 @@ if (!courseExists) {
     if (courseList.where((course) => course['courseCode'] == courseCode).length < 2) {
       // Add the new course to the list
       courseList.add(newCourse);
-      messageDiv.text = 'Course $courseCode added to the schedule on $day1 at $time1 and $day2 at $time2.';
+      messageDiv.text =
+          'Course $courseCode added to the schedule on $day1 at $time1 and $day2 at $time2.';
+      messageDiv.style.color = 'green';
     } else {
       courseList.add(newCourse);
       if (courseList.length == 1) {
@@ -50,6 +52,16 @@ if (!courseExists) {
   }
 } else {
   messageDiv.text = 'Error: Course $courseCode already exists in the schedule.';
+      messageDiv.text =
+          'Error: Course $courseCode already scheduled for two days.';
+      messageDiv.style.color = 'red';
+    }
+  } else {
+    messageDiv.text =
+        'Error: Course $courseCode already exists in the schedule.';
+    messageDiv.style.color = 'red';
+  }
+  return courseList;
 }
 
 return courseList;

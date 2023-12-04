@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f8f8f8;
+    background-color: #dff2ff;
     margin: 0;
 }
 
@@ -22,7 +22,6 @@ table {
     width: 50%;
     border-collapse: collapse;
     margin: auto;
-    
 }
 
 th, td {
@@ -32,18 +31,27 @@ th, td {
 }
 
 th {
-    background-color: #eee;
+    background-color: #7ba5e8;
+    color: #fff;
 }
 
-.time-display {
+tr {
+    background-color: #fff;
+}
+
+td:first-child {
+    background-color: #0693e3;
+    color: white;
+}
+
+td:first-child:hover {
+    background-color: #0693e3;
+    cursor: default;
+}
+
+#time-display {
     font-size: 14px;
     width: 100px;
-    background-color: #eee;
-}
-
-.time-display:hover {
-    background-color: #eee;
-    cursor: default;
 }
 
 /* Add some hover effect for better user interaction */

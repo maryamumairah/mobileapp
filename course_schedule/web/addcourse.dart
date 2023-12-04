@@ -14,7 +14,8 @@ List<Map<String, String>> addCourse(
   };
 
   // Check if the course already exists in the list
-  bool courseExists = courseList.any((course) => course['courseCode'] == courseCode);
+  bool courseExists =
+      courseList.any((course) => course['courseCode'] == courseCode);
   DivElement messageDiv = querySelector('#message') as DivElement;
   if (!courseExists) {
     // Check if the course has less than two time slots
@@ -24,11 +25,18 @@ List<Map<String, String>> addCourse(
         2) {
       // Add the new course to the list
       courseList.add(newCourse);
-      messageDiv.text = 'Course $courseCode added to the schedule on $day1 at $time1 and $day2 at $time2.';
+      messageDiv.text =
+          'Course $courseCode added to the schedule on $day1 at $time1 and $day2 at $time2.';
+      messageDiv.style.color = 'green';
     } else {
-      messageDiv.text = 'Error: Course $courseCode already scheduled for two days.';
+      messageDiv.text =
+          'Error: Course $courseCode already scheduled for two days.';
+      messageDiv.style.color = 'red';
     }
   } else {
-    messageDiv.text = 'Error: Course $courseCode already exists in the schedule.';  }
+    messageDiv.text =
+        'Error: Course $courseCode already exists in the schedule.';
+    messageDiv.style.color = 'red';
+  }
   return courseList;
 }

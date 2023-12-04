@@ -39,14 +39,17 @@ List<Map<String, String>> editCourse(List<Map<String, String>> courseList,
       }
 
       messageDiv.text = 'Course updated successfully.';
+      messageDiv.style.color = 'green';
     } else {
       // If there's an overlap, print an error message
       messageDiv.text =
           'Error: The updated course overlaps with an existing course. Please check the course times again.';
+      messageDiv.style.color = 'red';
     }
   } else {
     messageDiv.text =
         'Error: Course $courseCode does not exist in the schedule. Please check the course code again.';
+    messageDiv.style.color = 'red';
   }
 
   return courseList;

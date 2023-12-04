@@ -22,15 +22,7 @@ List<Map<String, String>> addCourse(String courseCode, String day1, String time1
   // Check if the course already exists in the list
    bool courseExists = courseList.any((course) => course['courseCode'] == courseCode);
   DivElement messageDiv = querySelector('#message') as DivElement;
- 
-if (!courseExists) {
-  if (courseList.where((course) => course['courseCode'] == courseCode).length < 25) {
-    if (day1 == day2 && time1 == time2) {
-      messageDiv.text = 'Error: The course overlaps with an existing course/day/time. Please check again.';
-    } else if (hasOverlapWithExisting(courseList, courseCode, day1, time1, day2, time2)) {
-      messageDiv.text = 'Error: The course overlaps with an existing course/day/time. Please check again.';
-    }  
-  }    
+    
   if (!courseExists) {
     // Check if the course has less than two time slots
     if (courseList.where((course) => course['courseCode'] == courseCode).length < 2) {
@@ -39,6 +31,8 @@ if (!courseExists) {
       messageDiv.text =
           'Course $courseCode added to the schedule on $day1 at $time1 and $day2 at $time2.';
       messageDiv.style.color = 'green';
+   if (day1 == day2 && time1 == time2 || hasOverlapWithExisting(courseList, courseCode, day1, time1, day2, time2)) {
+      messageDiv.text = 'Error: The course overlaps with an existing course/day/time. Please check again.';
     } else {
       courseList.add(newCourse);
       if (courseList.length == 1) {
@@ -62,8 +56,4 @@ if (!courseExists) {
     messageDiv.style.color = 'red';
   }
   return courseList;
-}
-
-return courseList;
-
 }

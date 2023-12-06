@@ -1,6 +1,6 @@
 **Case Study Title: A Course Scheduling System**
 
-**Group Name: 2Nad**
+Group Name: 2Nad
 
 Group Members:
 1. MARYAM UMAIRAH BINTI ARMAN YATIM 2110256

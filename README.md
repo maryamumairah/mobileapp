@@ -8,7 +8,7 @@ Group Members:
 3. NADIRAH BINTI ROS LIZA 2027832
 4. ANEESA NADIRA BINTI AMINUDDIN 2016174
 
-**Assigned Tasks for Each Group Member**
+Assigned Tasks for Each Group Member
 1. MARYAM UMAIRAH - viewSchedule HTML, viewSchedule function
 2. FARIHA HADAINA - Course Registration HTML, editCourse function
 3. NADIRAH - addCourse function

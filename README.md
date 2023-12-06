@@ -1,10 +1,18 @@
 **Case Study Title: A Course Scheduling System**
 
+**Group Name: 2Nad**
+
 Group Members:
 1. MARYAM UMAIRAH BINTI ARMAN YATIM 2110256
 2. FARIHA HADAINA BINTI MOHD SHAZALI 2114478	
 3. NADIRAH BINTI ROS LIZA 2027832
 4. ANEESA NADIRA BINTI AMINUDDIN 2016174
+
+**Assigned Tasks for Each Group Member**
+1. MARYAM UMAIRAH - viewSchedule HTML, viewSchedule function
+2. FARIHA HADAINA - Course Registration HTML, editCourse function
+3. NADIRAH - addCourse function
+4. ANEESA NADIRA - dateTime for adding course, removeCourse function
 
 *Description:*
 This course scheduling system enables users to add preferred subjects by entering course codes. Users are required to specify the days and times for two sessions or meetings per course, according to the permissible schedules. Additionally, users can conveniently view their schedules after successfully adding courses. Lastly, users can remove or edit courses according to their preferences.

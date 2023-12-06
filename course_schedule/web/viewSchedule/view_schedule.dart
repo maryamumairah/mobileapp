@@ -9,16 +9,6 @@ class Course {
   String time2;
 
   Course(this.courseCode, this.day1, this.time1, this.day2, this.time2);
-
-  factory Course.fromMap(Map<String, String> map) {
-    return Course(
-      map['courseCode'] ?? '',
-      map['day1'] ?? '',
-      map['time1'] ?? '',
-      map['day2'] ?? '',
-      map['time2'] ?? '',
-    );
-  }
 }
 
 void main() {

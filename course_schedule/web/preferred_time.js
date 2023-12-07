@@ -25,9 +25,7 @@ function preferedTime(startTime, messageElement) {
     startTime !== '15:30'
   ) {
     messageElement.innerHTML = "Error: Session time is only allowable for 08:30am, 10:00am, 11:30am, 02:00pm, and 03:30pm";
-    messageElement.style.color = 'red';
   } else {
     messageElement.innerHTML = "Session time is allowable";
-    messageElement.style.color = 'green';
   }
 }

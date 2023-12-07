@@ -11,7 +11,7 @@ Group Members:
 Assigned Tasks for Each Group Member
 1. MARYAM UMAIRAH - viewSchedule HTML, viewSchedule function
 2. FARIHA HADAINA - Course Registration HTML, editCourse function
-3. NADIRAH - addCourse function
+3. NADIRAH - addCourse function, overlap function
 4. ANEESA NADIRA - dateTime for adding course, removeCourse function
 
 *Description:*
